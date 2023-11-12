@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 const HomePage = ({ allNews }) => {
   // console.log(allNews);
   const { data, isLoading, isError, error } = useGetNewsesQuery(); //-> redux store data
-  console.log("Data fetch redux:", data);
+  //console.log("Data fetch redux:", data);
 
   const DynamicBanner = dynamic(() => import("@/components/UI/Banner"), {
     loading: () => <h1>Loading...</h1>,
