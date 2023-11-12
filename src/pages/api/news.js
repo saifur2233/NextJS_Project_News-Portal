@@ -1,6 +1,5 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =
-  "mongodb+srv://<username>:<password>@cluster0.wh888.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.g79cke1.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -16,7 +15,7 @@ async function run(req, res) {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
     // Send a ping to confirm a successful connection
-    const newsCollection = client.db("news_portal").collection("news");
+    const newsCollection = client.db("news-portal").collection("news");
 
     if (req.method === "GET") {
       const news = await newsCollection.find({}).toArray();
