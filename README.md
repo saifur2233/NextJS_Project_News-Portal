@@ -1,15 +1,5 @@
-## Getting Started
+# Project Name: News Portal
 
-Clone This Starter File
+### Tools and Technology: Next.js, React-redux, reduxjs/toolkit, Node JS, Express JS
 
-Then, run 
-```bash
-npm install
-#or
-npm i
-
-After that, run the development server:
-
-```bash
-npm run dev
-
+### Live link:
