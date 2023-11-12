@@ -4,4 +4,4 @@ News-Portal is an online news portal that provides the latest news and informati
 
 ### Tools and Technology: Next.js, React-redux, reduxjs/toolkit, Node JS, Express JS
 
-### Live link:
+### Live link: saifur-news-portal.netlify.app
