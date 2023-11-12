@@ -74,10 +74,10 @@ NewsDetailPage.getLayout = function getLayout(page) {
 };
 
 // export const getStaticPaths = async () => {
-//   const res = await fetch("http://localhost:5000/news");
+//   const res = await fetch("https://news-server-ecru.vercel.app/news");
 //   const newses = await res.json();
-
-//   const paths = newses.map((news) => ({
+//   console.log("New Detail1 ", newses?.data);
+//   const paths = newses?.data.map((news) => ({
 //     params: { newsId: news.id },
 //   }));
 
@@ -86,9 +86,11 @@ NewsDetailPage.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async (context) => {
   const { params } = context;
-  const res = await fetch(`http://localhost:5000/news/${params.newsId}`);
+  const res = await fetch(
+    `https://news-server-ecru.vercel.app/news/${params.newsId}`
+  );
   const data = await res.json();
-  // console.log(data);
+  console.log("New Detail ", data);
 
   return {
     props: {

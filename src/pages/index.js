@@ -10,7 +10,6 @@ const HomePage = ({ allNews }) => {
   const { data, isLoading, isError, error } = useGetNewsesQuery(); //-> redux store data
   // console.log(data);
 
-
   const DynamicBanner = dynamic(() => import("@/components/UI/Banner"), {
     loading: () => <h1>Loading...</h1>,
     ssr: false,
@@ -40,18 +39,17 @@ HomePage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   // const res = await fetch("http://localhost:3000/api/news"); // internal API connected with mongoDB
-  const res = await fetch("http://localhost:5000/news"); // --> json server
+  const res = await fetch("https://news-server-ecru.vercel.app/news"); // --> json server
   const data = await res.json();
-  // console.log(data);
+
   return {
     props: {
-      allNews: data,
+      allNews: data.data,
       // allNews: data.data, // when using internal API connected with mongoDB
     },
     revalidate: 10,
   };
 };
-
 
 // for server side rendering (SSR) with json-server data
 /* export const getServerSideProps = async () => {

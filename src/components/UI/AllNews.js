@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 
 const AllNews = ({ allNews }) => {
+  console.log("All news page", allNews);
   const { Meta } = Card;
   return (
     <>
@@ -80,7 +81,7 @@ const AllNews = ({ allNews }) => {
                   ? news?.description.slice(0, 70) + "..."
                   : news?.description}
               </p>
-              <Link href={`/news/${news?.id}`}>
+              <Link href={`/news/${news?._id}`}>
                 <p
                   style={{
                     fontSize: "15px",
